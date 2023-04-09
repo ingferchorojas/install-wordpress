@@ -28,9 +28,9 @@ sudo mysql -u root -p$MYSQL_ROOT_PASSWORD -e "FLUSH PRIVILEGES;"
 cd /tmp
 wget https://wordpress.org/latest.tar.gz
 tar xf latest.tar.gz
-mv wordpress /var/www/html/
-chown -R www-data:www-data /var/www/html/wordpress
-chmod -R 755 /var/www/html/wordpress
+sudo mv wordpress /var/www/html/
+sudo chown -R www-data:www-data /var/www/html/wordpress
+sudo chmod -R 755 /var/www/html/wordpress
 
 # Set up the WordPress configuration file
 cd /var/www/html/wordpress/
@@ -40,7 +40,7 @@ sed -i "s/username_here/$wordpress_db_user/" wp-config.php
 sed -i "s/password_here/$wordpress_db_password/" wp-config.php
 
 # Set up virtual host
-sh -c "echo '<VirtualHost *:80>
+sudo sh -c "echo '<VirtualHost *:80>
     ServerAdmin webmaster@localhost
     ServerName linuxlat.com
     DocumentRoot /var/www/html/wordpress
