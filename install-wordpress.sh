@@ -34,10 +34,10 @@ sudo chmod -R 755 /var/www/html/wordpress
 
 # Set up the WordPress configuration file
 cd /var/www/html/wordpress/
-mv wp-config-sample.php wp-config.php
-sed -i "s/database_name_here/$wordpress_db_name/" wp-config.php
-sed -i "s/username_here/$wordpress_db_user/" wp-config.php
-sed -i "s/password_here/$wordpress_db_password/" wp-config.php
+sudo mv wp-config-sample.php wp-config.php
+sudo sed -i "s/database_name_here/$wordpress_db_name/" wp-config.php
+sudo sed -i "s/username_here/$wordpress_db_user/" wp-config.php
+sudo sed -i "s/password_here/$wordpress_db_password/" wp-config.php
 
 # Set up virtual host
 sudo sh -c "echo '<VirtualHost *:80>
