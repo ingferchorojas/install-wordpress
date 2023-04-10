@@ -34,7 +34,7 @@ sudo chmod -R 755 /var/www/html/wordpress
 
 # Set up the WordPress configuration file
 cd /var/www/html/wordpress/
-cp wp-config-sample.php wp-config.php
+mv wp-config-sample.php wp-config.php
 sed -i "s/database_name_here/$wordpress_db_name/" wp-config.php
 sed -i "s/username_here/$wordpress_db_user/" wp-config.php
 sed -i "s/password_here/$wordpress_db_password/" wp-config.php
@@ -42,12 +42,12 @@ sed -i "s/password_here/$wordpress_db_password/" wp-config.php
 # Set up virtual host
 sudo sh -c "echo '<VirtualHost *:80>
     ServerAdmin webmaster@localhost
-    ServerName linuxlat.com
+    ServerName $wordpress_domain
     DocumentRoot /var/www/html/wordpress
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>' > /etc/apache2/sites-available/linuxlat.com.conf"
-sudo a2ensite linuxlat.com.conf
+</VirtualHost>' > /etc/apache2/sites-available/$wordpress_domain.conf"
+sudo a2ensite $wordpress_domain.conf
 sudo systemctl reload apache2
 
 # Clean up
