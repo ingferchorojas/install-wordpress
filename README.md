@@ -8,7 +8,7 @@ Antes de ejecutar este script, asegúrate de que cumplir con los siguientes requ
 
 - Tener un servidor Ubuntu.
 - Tener acceso de superusuario (sudo).
-- Tener un archivo `env.sh` con las variables de entorno necesarias.
+- Editar `env.sh` con las variables de entorno necesarias.
 
 ## Pasos
 
@@ -56,4 +56,4 @@ Este script realiza los siguientes pasos:
 
 ## Advertencia
 
-Este script se proporciona tal cual, sin garantía de ningún tipo. El autor no es responsable de ningún daño que pueda causar su uso. Antes de ejecutar este script, asegúrate de que entiendes lo que hace. ¡Usa bajo tu propio riesgo!
+Este script se proporciona tal cual, sin garantía de ningún tipo. El autor no es responsable de ningún daño que pueda causar su uso. Antes de ejecutar este script, asegúrate de que entiendes lo que hace.
